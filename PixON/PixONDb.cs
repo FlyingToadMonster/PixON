@@ -46,12 +46,9 @@ UNIQUE (path)
             cmd = new SQLiteCommand(@"
 CREATE TABLE IF NOT EXISTS InfoDb
 (
-id int NOT NULL AUTO_INCREMENT, 
 hash char(32) NOT NULL, 
 key varchar(255) NOT NULL, 
-value varchar(8000), 
-PRIMARY KEY (id), 
-INDEX (hash)
+value varchar(8000)
 )"
                 , pixDbConn);
             cmd.ExecuteNonQuery();
@@ -60,7 +57,7 @@ INDEX (hash)
         public string AddFile(string fileName)
         {
             string md5 = GetMD5(fileName);
-            SQLiteCommand cmd = new SQLiteCommand("INSERT INTO FileDb (hash, path) VALUES (@Hash, @Path) ON DUPLICATE KEY UPDATE path=VALUES(path)", pixDbConn);
+            SQLiteCommand cmd = new SQLiteCommand("INSERT OR REPLACE INTO FileDb (hash, path) VALUES (@Hash, @Path)", pixDbConn);
             cmd.Parameters.AddWithValue("Hash", md5);
             cmd.Parameters.AddWithValue("Path", fileName);
             cmd.ExecuteNonQuery();
