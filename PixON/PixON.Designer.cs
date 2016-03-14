@@ -70,6 +70,7 @@
             this.btnDel.TabIndex = 3;
             this.btnDel.Text = "删除选定项";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnSelectPath
             // 
@@ -79,6 +80,7 @@
             this.btnSelectPath.TabIndex = 4;
             this.btnSelectPath.Text = "...";
             this.btnSelectPath.UseVisualStyleBackColor = true;
+            this.btnSelectPath.Click += new System.EventHandler(this.btnSelectPath_Click);
             // 
             // PixON
             // 
