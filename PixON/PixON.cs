@@ -13,9 +13,13 @@ namespace PixON
 {
     public partial class PixON : Form
     {
+        private QuickBar qb;
+
         public PixON()
         {
             InitializeComponent();
+            qb = new QuickBar();
+            qb.mainForm = this;
         }
 
         private void btnSelectPath_Click(object sender, EventArgs e)
@@ -46,6 +50,12 @@ namespace PixON
                     lbPathList.Items.Remove(selected[i]);
                 }
             }
+        }
+
+        private void btnQBar_Click(object sender, EventArgs e)
+        {
+            qb.Show();
+            Hide();
         }
     }
 }
