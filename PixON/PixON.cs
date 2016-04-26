@@ -55,7 +55,11 @@ namespace PixON
         private void btnQBar_Click(object sender, EventArgs e)
         {
             qb.Show();
-            Hide();
+        }
+
+        private void btnClipImp_Click(object sender, EventArgs e)
+        {
+            PicOp.ImportClipboard();
         }
     }
 }

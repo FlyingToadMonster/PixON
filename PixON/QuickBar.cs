@@ -38,7 +38,6 @@ namespace PixON
 
         private void ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            mainForm.Show();
             Hide();
         }
 

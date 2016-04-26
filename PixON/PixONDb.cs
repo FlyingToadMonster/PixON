@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data.SQLite;
 using System.IO;
-using System.Security.Cryptography;
 using System.Text;
 
 namespace PixON
@@ -9,17 +8,6 @@ namespace PixON
     class PixONDb
     {
         private static SQLiteConnection pixDbConn;
-
-        private string GetMD5(string fileName)
-        {
-            using (var md5 = MD5.Create())
-            {
-                using (var stream = File.OpenRead(fileName))
-                {
-                    return Encoding.Default.GetString(md5.ComputeHash(stream));
-                }
-            }
-        }
 
         public PixONDb(string pixDbName = "db/pixDb.sqlite")
         {
@@ -54,9 +42,9 @@ value varchar(8000)
             cmd.ExecuteNonQuery();
         }
 
-        public string AddFile(string fileName)
+        public string AddFile(string fileName, string md5 = "")
         {
-            string md5 = GetMD5(fileName);
+            if (md5 == "") md5 = Format.GetMD5(fileName);
             SQLiteCommand cmd = new SQLiteCommand("INSERT OR REPLACE INTO FileDb (hash, path) VALUES (@Hash, @Path)", pixDbConn);
             cmd.Parameters.AddWithValue("Hash", md5);
             cmd.Parameters.AddWithValue("Path", fileName);

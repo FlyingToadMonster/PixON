@@ -35,6 +35,7 @@
             this.btnSelectPath = new System.Windows.Forms.Button();
             this.fbdSelectPath = new System.Windows.Forms.FolderBrowserDialog();
             this.btnQBar = new System.Windows.Forms.Button();
+            this.btnClipImp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbPathList
@@ -93,11 +94,22 @@
             this.btnQBar.UseVisualStyleBackColor = true;
             this.btnQBar.Click += new System.EventHandler(this.btnQBar_Click);
             // 
+            // btnClipImp
+            // 
+            this.btnClipImp.Location = new System.Drawing.Point(217, 134);
+            this.btnClipImp.Name = "btnClipImp";
+            this.btnClipImp.Size = new System.Drawing.Size(75, 41);
+            this.btnClipImp.TabIndex = 6;
+            this.btnClipImp.Text = "从剪贴板添加图片";
+            this.btnClipImp.UseVisualStyleBackColor = true;
+            this.btnClipImp.Click += new System.EventHandler(this.btnClipImp_Click);
+            // 
             // PixON
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(314, 247);
+            this.Controls.Add(this.btnClipImp);
             this.Controls.Add(this.btnQBar);
             this.Controls.Add(this.btnSelectPath);
             this.Controls.Add(this.btnDel);
@@ -120,6 +132,7 @@
         private System.Windows.Forms.Button btnSelectPath;
         private System.Windows.Forms.FolderBrowserDialog fbdSelectPath;
         private System.Windows.Forms.Button btnQBar;
+        private System.Windows.Forms.Button btnClipImp;
     }
 }
 
