@@ -69,6 +69,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Picture.cs" />
+    <Compile Include="KeyValue.cs" />
     <Compile Include="QuickBar.cs">
       <SubType>Form</SubType>
     </Compile>

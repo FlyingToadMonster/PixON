@@ -10,21 +10,13 @@ using System.Windows.Forms;
 
 namespace PixON
 {
-    public struct Pic
-    {
-        public string hash;
-        public string title;
-        public string path;
-        public int index;
-    }
-
     public partial class QuickBar : Form
     {
         internal PixON mainForm;
         private int offsetX;
         private int offsetY;
         private bool isMoving;
-        Pic[] recentPic = new Pic[20];
+        private Picture[] recentPic = new Picture[20];
 
         public QuickBar()
         {
