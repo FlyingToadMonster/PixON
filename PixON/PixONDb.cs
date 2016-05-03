@@ -85,6 +85,20 @@ value varchar(8000)
             return result;
         }
 
+        public HashSet<string> GetFile(string value)
+        {
+            if (string.IsNullOrEmpty(value)) return null;
+            HashSet<string> result = new HashSet<string>();
+            SQLiteCommand cmd = new SQLiteCommand("SELECT path FROM FileDb JOIN InfoDB ON FileDb.hash=InfoDb.hash WHERE InfoDb.value LIKE @Value", pixDbConn);
+            cmd.Parameters.AddWithValue("Value", "%" + value + "%");
+            SQLiteDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                result.Add(rdr.GetString(0));
+            }
+            return result;
+        }
+
         public void Close()
         {
             pixDbConn.Close();

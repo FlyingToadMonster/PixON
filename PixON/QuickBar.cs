@@ -33,7 +33,7 @@ namespace PixON
 
         private void QuickBar_DragDrop(object sender, DragEventArgs e)
         {
-            
+
         }
 
         private void ToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -95,6 +95,31 @@ namespace PixON
         private void recentBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             searchBox.Text = (string)recentBox.SelectedItem;
+        }
+
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = searchBox.Text;
+            PixONDb picDb = new PixONDb();
+            HashSet<string> resultText = picDb.GetFile(searchText);
+            resultImageList.Images.Clear();
+            resultBox.Clear();
+            if (resultText != null)
+            {
+                foreach (string path in resultText)
+                {
+                    resultImageList.Images.Add(Image.FromFile(path));
+                    resultBox.View = View.LargeIcon;
+                    resultImageList.ImageSize = new Size(32, 32);
+                    resultBox.LargeImageList = resultImageList;
+                }
+                for (int i = 0; i < resultImageList.Images.Count; i++)
+                {
+                    ListViewItem item = new ListViewItem();
+                    item.ImageIndex = i;
+                    resultBox.Items.Add(item);
+                }
+            }
         }
     }
 }

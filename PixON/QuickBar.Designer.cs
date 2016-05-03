@@ -36,7 +36,7 @@
             this.searchBox = new System.Windows.Forms.TextBox();
             this.iconBox = new System.Windows.Forms.PictureBox();
             this.resultBox = new System.Windows.Forms.ListView();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.resultImageList = new System.Windows.Forms.ImageList(this.components);
             this.recentBox = new System.Windows.Forms.ListBox();
             this.contextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconBox)).BeginInit();
@@ -67,6 +67,7 @@
             this.searchBox.Size = new System.Drawing.Size(347, 31);
             this.searchBox.TabIndex = 1;
             this.searchBox.Visible = false;
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
             // iconBox
             // 
@@ -88,20 +89,20 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.resultBox.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
-            this.resultBox.LargeImageList = this.imageList1;
+            this.resultBox.LargeImageList = this.resultImageList;
             this.resultBox.Location = new System.Drawing.Point(0, 257);
             this.resultBox.Name = "resultBox";
             this.resultBox.Size = new System.Drawing.Size(347, 344);
-            this.resultBox.SmallImageList = this.imageList1;
+            this.resultBox.SmallImageList = this.resultImageList;
             this.resultBox.TabIndex = 3;
             this.resultBox.UseCompatibleStateImageBehavior = false;
             this.resultBox.Visible = false;
             // 
-            // imageList1
+            // resultImageList
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "QuickBarIcon.png");
+            this.resultImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("resultImageList.ImageStream")));
+            this.resultImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.resultImageList.Images.SetKeyName(0, "QuickBarIcon.png");
             // 
             // recentBox
             // 
@@ -155,7 +156,7 @@
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.PictureBox iconBox;
         private System.Windows.Forms.ListView resultBox;
-        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ImageList resultImageList;
         private System.Windows.Forms.ListBox recentBox;
     }
 }
