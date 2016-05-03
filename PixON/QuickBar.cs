@@ -106,20 +106,28 @@ namespace PixON
             resultBox.Clear();
             if (resultText != null)
             {
+                List<string> pathList = new List<string>();
                 foreach (string path in resultText)
                 {
                     resultImageList.Images.Add(Image.FromFile(path));
                     resultBox.View = View.LargeIcon;
                     resultImageList.ImageSize = new Size(32, 32);
                     resultBox.LargeImageList = resultImageList;
+                    pathList.Add(path);
                 }
                 for (int i = 0; i < resultImageList.Images.Count; i++)
                 {
                     ListViewItem item = new ListViewItem();
                     item.ImageIndex = i;
+                    item.Name = pathList[i];
                     resultBox.Items.Add(item);
                 }
             }
+        }
+
+        private void resultBox_DoubleClick(object sender, EventArgs e)
+        {
+            Clipboard.SetImage(Image.FromFile(resultBox.SelectedItems[0].SubItems[0].Name));
         }
     }
 }

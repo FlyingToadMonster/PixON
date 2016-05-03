@@ -97,6 +97,7 @@
             this.resultBox.TabIndex = 3;
             this.resultBox.UseCompatibleStateImageBehavior = false;
             this.resultBox.Visible = false;
+            this.resultBox.DoubleClick += new System.EventHandler(this.resultBox_DoubleClick);
             // 
             // resultImageList
             // 
