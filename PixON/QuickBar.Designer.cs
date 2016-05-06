@@ -30,30 +30,30 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuickBar));
-            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuQuickBar = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuQuickBarShowMain = new System.Windows.Forms.ToolStripMenuItem();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.iconBox = new System.Windows.Forms.PictureBox();
             this.resultBox = new System.Windows.Forms.ListView();
             this.resultImageList = new System.Windows.Forms.ImageList(this.components);
             this.recentBox = new System.Windows.Forms.ListBox();
-            this.contextMenuStrip.SuspendLayout();
+            this.menuQuickBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // contextMenuStrip
+            // menuQuickBar
             // 
-            this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItem1});
-            this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(137, 26);
+            this.menuQuickBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuQuickBarShowMain});
+            this.menuQuickBar.Name = "menuQuickBar";
+            this.menuQuickBar.Size = new System.Drawing.Size(137, 26);
             // 
-            // ToolStripMenuItem1
+            // menuQuickBarShowMain
             // 
-            this.ToolStripMenuItem1.Name = "ToolStripMenuItem1";
-            this.ToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
-            this.ToolStripMenuItem1.Text = "显示主界面";
-            this.ToolStripMenuItem1.Click += new System.EventHandler(this.ToolStripMenuItem1_Click);
+            this.menuQuickBarShowMain.Name = "menuQuickBarShowMain";
+            this.menuQuickBarShowMain.Size = new System.Drawing.Size(136, 22);
+            this.menuQuickBarShowMain.Text = "显示主界面";
+            this.menuQuickBarShowMain.Click += new System.EventHandler(this.menuQuickBarShowMain_Click);
             // 
             // searchBox
             // 
@@ -124,7 +124,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(400, 600);
-            this.ContextMenuStrip = this.contextMenuStrip;
+            this.ContextMenuStrip = this.menuQuickBar;
             this.ControlBox = false;
             this.Controls.Add(this.resultBox);
             this.Controls.Add(this.iconBox);
@@ -139,7 +139,7 @@
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.SystemColors.Control;
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.QuickBar_DragDrop);
-            this.contextMenuStrip.ResumeLayout(false);
+            this.menuQuickBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -148,8 +148,8 @@
 
         #endregion
 
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem1;
+        private System.Windows.Forms.ContextMenuStrip menuQuickBar;
+        private System.Windows.Forms.ToolStripMenuItem menuQuickBarShowMain;
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.PictureBox iconBox;
         private System.Windows.Forms.ListView resultBox;

@@ -39,6 +39,10 @@
             this.btnQBar = new System.Windows.Forms.Button();
             this.btnClipImp = new System.Windows.Forms.Button();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.menuTray = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuTrayShowMain = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuTrayExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuTray.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbPathList
@@ -109,9 +113,32 @@
             // 
             // notifyIcon
             // 
+            this.notifyIcon.ContextMenuStrip = this.menuTray;
             this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
             this.notifyIcon.Text = "PixON";
-            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
+            this.notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseClick);
+            // 
+            // menuTray
+            // 
+            this.menuTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuTrayShowMain,
+            this.menuTrayExit});
+            this.menuTray.Name = "menuTray";
+            this.menuTray.Size = new System.Drawing.Size(153, 70);
+            // 
+            // menuTrayShowMain
+            // 
+            this.menuTrayShowMain.Name = "menuTrayShowMain";
+            this.menuTrayShowMain.Size = new System.Drawing.Size(152, 22);
+            this.menuTrayShowMain.Text = "显示主界面";
+            this.menuTrayShowMain.Click += new System.EventHandler(this.menuTrayShowMain_Click);
+            // 
+            // menuTrayExit
+            // 
+            this.menuTrayExit.Name = "menuTrayExit";
+            this.menuTrayExit.Size = new System.Drawing.Size(152, 22);
+            this.menuTrayExit.Text = "退出程序";
+            this.menuTrayExit.Click += new System.EventHandler(this.menuTrayExit_Click);
             // 
             // PixON
             // 
@@ -129,6 +156,7 @@
             this.Name = "PixON";
             this.Text = "PixON";
             this.Resize += new System.EventHandler(this.PixON_Resize);
+            this.menuTray.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,6 +173,9 @@
         private System.Windows.Forms.Button btnQBar;
         private System.Windows.Forms.Button btnClipImp;
         private System.Windows.Forms.NotifyIcon notifyIcon;
+        private System.Windows.Forms.ContextMenuStrip menuTray;
+        private System.Windows.Forms.ToolStripMenuItem menuTrayShowMain;
+        private System.Windows.Forms.ToolStripMenuItem menuTrayExit;
     }
 }
 

@@ -79,10 +79,24 @@ namespace PixON
             }
         }
 
-        private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void notifyIcon_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Show();
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void menuTrayShowMain_Click(object sender, EventArgs e)
         {
             Show();
             WindowState = FormWindowState.Normal;
+        }
+
+        private void menuTrayExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -43,7 +43,7 @@ namespace PixON
 
         }
 
-        private void ToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void menuQuickBarShowMain_Click(object sender, EventArgs e)
         {
             Hide();
         }
@@ -122,7 +122,7 @@ namespace PixON
                 {
                     resultImageList.Images.Add(Image.FromFile(path));
                     resultBox.View = View.LargeIcon;
-                    resultImageList.ImageSize = new Size(32, 32);
+                    resultImageList.ImageSize = new Size(64, 64);
                     resultBox.LargeImageList = resultImageList;
                     pathList.Add(path);
                 }
