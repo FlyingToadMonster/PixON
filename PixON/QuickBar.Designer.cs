@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuickBar));
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("一号图片", 0);
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.searchBox = new System.Windows.Forms.TextBox();
@@ -62,7 +61,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.searchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.searchBox.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.searchBox.Location = new System.Drawing.Point(0, 220);
+            this.searchBox.Location = new System.Drawing.Point(53, 220);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(347, 31);
             this.searchBox.TabIndex = 1;
@@ -73,9 +72,10 @@
             // 
             this.iconBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconBox.Image = ((System.Drawing.Image)(resources.GetObject("iconBox.Image")));
-            this.iconBox.Location = new System.Drawing.Point(350, 210);
+            this.iconBox.Location = new System.Drawing.Point(0, 210);
             this.iconBox.Name = "iconBox";
             this.iconBox.Size = new System.Drawing.Size(50, 50);
+            this.iconBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.iconBox.TabIndex = 2;
             this.iconBox.TabStop = false;
             this.iconBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.iconBox_MouseDown);
@@ -87,10 +87,8 @@
             this.resultBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.resultBox.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
             this.resultBox.LargeImageList = this.resultImageList;
-            this.resultBox.Location = new System.Drawing.Point(0, 257);
+            this.resultBox.Location = new System.Drawing.Point(53, 257);
             this.resultBox.Name = "resultBox";
             this.resultBox.Size = new System.Drawing.Size(347, 344);
             this.resultBox.SmallImageList = this.resultImageList;
@@ -100,9 +98,9 @@
             // 
             // resultImageList
             // 
-            this.resultImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("resultImageList.ImageStream")));
+            this.resultImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.resultImageList.ImageSize = new System.Drawing.Size(64, 64);
             this.resultImageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.resultImageList.Images.SetKeyName(0, "QuickBarIcon.png");
             // 
             // recentBox
             // 
@@ -114,7 +112,7 @@
             this.recentBox.ItemHeight = 21;
             this.recentBox.Items.AddRange(new object[] {
             "（此处会显示您最近搜索过的字词）"});
-            this.recentBox.Location = new System.Drawing.Point(0, 0);
+            this.recentBox.Location = new System.Drawing.Point(53, 0);
             this.recentBox.Name = "recentBox";
             this.recentBox.Size = new System.Drawing.Size(347, 214);
             this.recentBox.TabIndex = 4;

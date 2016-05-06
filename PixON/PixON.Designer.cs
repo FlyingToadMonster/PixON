@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PixON));
             this.lbPathList = new System.Windows.Forms.ListBox();
             this.tbPathInput = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -108,8 +109,8 @@
             // 
             // notifyIcon
             // 
-            this.notifyIcon.Text = "notifyIcon";
-            this.notifyIcon.Visible = true;
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "PixON";
             this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
             // 
             // PixON
@@ -124,6 +125,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.tbPathInput);
             this.Controls.Add(this.lbPathList);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PixON";
             this.Text = "PixON";
             this.Resize += new System.EventHandler(this.PixON_Resize);
