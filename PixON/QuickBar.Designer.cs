@@ -46,12 +46,13 @@
             this.menuQuickBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuQuickBarShowMain});
             this.menuQuickBar.Name = "menuQuickBar";
-            this.menuQuickBar.Size = new System.Drawing.Size(137, 26);
+            this.menuQuickBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuQuickBar.Size = new System.Drawing.Size(153, 48);
             // 
             // menuQuickBarShowMain
             // 
             this.menuQuickBarShowMain.Name = "menuQuickBarShowMain";
-            this.menuQuickBarShowMain.Size = new System.Drawing.Size(136, 22);
+            this.menuQuickBarShowMain.Size = new System.Drawing.Size(152, 22);
             this.menuQuickBarShowMain.Text = "显示主界面";
             this.menuQuickBarShowMain.Click += new System.EventHandler(this.menuQuickBarShowMain_Click);
             // 

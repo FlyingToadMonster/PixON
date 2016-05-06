@@ -124,6 +124,7 @@
             this.menuTrayShowMain,
             this.menuTrayExit});
             this.menuTray.Name = "menuTray";
+            this.menuTray.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.menuTray.Size = new System.Drawing.Size(153, 70);
             // 
             // menuTrayShowMain

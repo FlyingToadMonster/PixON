@@ -110,8 +110,8 @@ namespace PixON
 
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
-            string searchText = searchBox.Text;
             PixONDb picDb = new PixONDb();
+            string searchText = searchBox.Text;
             HashSet<string> resultText = picDb.GetFile(searchText);
             resultImageList.Images.Clear();
             resultBox.Clear();
@@ -134,6 +134,7 @@ namespace PixON
                     resultBox.Items.Add(item);
                 }
             }
+            picDb.Close();
         }
 
         private void resultBox_DoubleClick(object sender, EventArgs e)
@@ -153,6 +154,10 @@ namespace PixON
                     Hide();
                     SendKeys.SendWait("^v");
                 }
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                Hide();
             }
         }
     }

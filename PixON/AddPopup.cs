@@ -27,6 +27,7 @@ namespace PixON
                     }
                 }
             }
+            picDb.Close();
             Close();
         }
     }
