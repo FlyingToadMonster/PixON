@@ -66,8 +66,8 @@
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(347, 31);
             this.searchBox.TabIndex = 1;
-            this.searchBox.Visible = false;
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
+            this.searchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchBox_KeyDown);
             // 
             // iconBox
             // 
@@ -96,7 +96,6 @@
             this.resultBox.SmallImageList = this.resultImageList;
             this.resultBox.TabIndex = 3;
             this.resultBox.UseCompatibleStateImageBehavior = false;
-            this.resultBox.Visible = false;
             this.resultBox.DoubleClick += new System.EventHandler(this.resultBox_DoubleClick);
             // 
             // resultImageList
@@ -119,7 +118,6 @@
             this.recentBox.Name = "recentBox";
             this.recentBox.Size = new System.Drawing.Size(347, 214);
             this.recentBox.TabIndex = 4;
-            this.recentBox.Visible = false;
             this.recentBox.SelectedIndexChanged += new System.EventHandler(this.recentBox_SelectedIndexChanged);
             // 
             // QuickBar

@@ -76,6 +76,7 @@
       <DependentUpon>AddPopup.cs</DependentUpon>
     </Compile>
     <Compile Include="Format.cs" />
+    <Compile Include="KeyboardHook.cs" />
     <Compile Include="PicOp.cs" />
     <Compile Include="QuickBar.cs">
       <SubType>Form</SubType>
