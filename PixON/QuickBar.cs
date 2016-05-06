@@ -26,8 +26,7 @@ namespace PixON
         public QuickBar()
         {
             InitializeComponent();
-
-            // register the event that is fired after the key press.
+            
             hook.KeyPressed += new EventHandler<KeyPressedEventArgs>(hook_KeyPressed);
             hook.RegisterHotKey(ModKeys.Control | ModKeys.Alt, Keys.K);
         }
@@ -141,6 +140,7 @@ namespace PixON
         {
             Clipboard.SetImage(Image.FromFile(resultBox.SelectedItems[0].SubItems[0].Name));
             Hide();
+            SendKeys.SendWait("^v");
         }
 
         private void searchBox_KeyDown(object sender, KeyEventArgs e)
@@ -151,6 +151,7 @@ namespace PixON
                 {
                     Clipboard.SetImage(Image.FromFile(resultBox.Items[0].SubItems[0].Name));
                     Hide();
+                    SendKeys.SendWait("^v");
                 }
             }
         }

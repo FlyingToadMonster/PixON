@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbPathList = new System.Windows.Forms.ListBox();
             this.tbPathInput = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -36,6 +37,7 @@
             this.fbdSelectPath = new System.Windows.Forms.FolderBrowserDialog();
             this.btnQBar = new System.Windows.Forms.Button();
             this.btnClipImp = new System.Windows.Forms.Button();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // lbPathList
@@ -58,7 +60,7 @@
             // 
             this.btnAdd.Location = new System.Drawing.Point(217, 39);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(85, 23);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "添加路径";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -68,7 +70,7 @@
             // 
             this.btnDel.Location = new System.Drawing.Point(217, 68);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 23);
+            this.btnDel.Size = new System.Drawing.Size(85, 23);
             this.btnDel.TabIndex = 3;
             this.btnDel.Text = "删除选定项";
             this.btnDel.UseVisualStyleBackColor = true;
@@ -86,9 +88,9 @@
             // 
             // btnQBar
             // 
-            this.btnQBar.Location = new System.Drawing.Point(217, 181);
+            this.btnQBar.Location = new System.Drawing.Point(217, 182);
             this.btnQBar.Name = "btnQBar";
-            this.btnQBar.Size = new System.Drawing.Size(75, 23);
+            this.btnQBar.Size = new System.Drawing.Size(85, 23);
             this.btnQBar.TabIndex = 5;
             this.btnQBar.Text = "悬浮窗";
             this.btnQBar.UseVisualStyleBackColor = true;
@@ -96,19 +98,25 @@
             // 
             // btnClipImp
             // 
-            this.btnClipImp.Location = new System.Drawing.Point(217, 134);
+            this.btnClipImp.Location = new System.Drawing.Point(217, 135);
             this.btnClipImp.Name = "btnClipImp";
-            this.btnClipImp.Size = new System.Drawing.Size(75, 41);
+            this.btnClipImp.Size = new System.Drawing.Size(85, 41);
             this.btnClipImp.TabIndex = 6;
             this.btnClipImp.Text = "从剪贴板添加图片";
             this.btnClipImp.UseVisualStyleBackColor = true;
             this.btnClipImp.Click += new System.EventHandler(this.btnClipImp_Click);
             // 
+            // notifyIcon
+            // 
+            this.notifyIcon.Text = "notifyIcon";
+            this.notifyIcon.Visible = true;
+            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
+            // 
             // PixON
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(314, 247);
+            this.ClientSize = new System.Drawing.Size(325, 235);
             this.Controls.Add(this.btnClipImp);
             this.Controls.Add(this.btnQBar);
             this.Controls.Add(this.btnSelectPath);
@@ -118,6 +126,7 @@
             this.Controls.Add(this.lbPathList);
             this.Name = "PixON";
             this.Text = "PixON";
+            this.Resize += new System.EventHandler(this.PixON_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,6 +142,7 @@
         private System.Windows.Forms.FolderBrowserDialog fbdSelectPath;
         private System.Windows.Forms.Button btnQBar;
         private System.Windows.Forms.Button btnClipImp;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
     }
 }
 

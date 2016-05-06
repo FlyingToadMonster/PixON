@@ -8,11 +8,22 @@ namespace PixON
     {
         private QuickBar qb;
 
+        KeyboardHook hook = new KeyboardHook();
+
         public PixON()
         {
             InitializeComponent();
+
+            hook.KeyPressed += new EventHandler<KeyPressedEventArgs>(hook_KeyPressed);
+            hook.RegisterHotKey(ModKeys.Control | ModKeys.Alt, Keys.I);
+
             qb = new QuickBar();
             qb.mainForm = this;
+        }
+
+        void hook_KeyPressed(object sender, KeyPressedEventArgs e)
+        {
+            PicOp.ImportClipboard();
         }
 
         private void btnSelectPath_Click(object sender, EventArgs e)
@@ -53,6 +64,25 @@ namespace PixON
         private void btnClipImp_Click(object sender, EventArgs e)
         {
             PicOp.ImportClipboard();
+        }
+
+        private void PixON_Resize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                notifyIcon.Visible = true;
+                Hide();
+            }
+            else if (WindowState == FormWindowState.Normal)
+            {
+                notifyIcon.Visible = false;
+            }
+        }
+
+        private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
         }
     }
 }
