@@ -50,6 +50,7 @@ namespace PixON
             
             var addPopup = new AddPopup();
             addPopup.imgMD5 = imgMD5;
+            addPopup.fileName = fileName;
 
             addPopup.Show();
             addPopup.Activate();

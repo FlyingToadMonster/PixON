@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace PixON
@@ -6,10 +7,16 @@ namespace PixON
     public partial class AddPopup : Form
     {
         public string imgMD5;
+        public string fileName;
 
         public AddPopup()
         {
             InitializeComponent();
+        }
+
+        private void AddPopup_Shown(object sender, EventArgs e)
+        {
+            pbPreview.Image = Image.FromFile(fileName);
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)

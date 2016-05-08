@@ -33,6 +33,7 @@ namespace PixON
 
         void hook_KeyPressed(object sender, KeyPressedEventArgs e)
         {
+            searchBox.Clear();
             Show();
             Activate();
             searchBox.Focus();
@@ -115,8 +116,10 @@ namespace PixON
             HashSet<string> resultText = picDb.GetFile(searchText);
             resultImageList.Images.Clear();
             resultBox.Clear();
+
             if (resultText != null)
             {
+                resultBox.Show();
                 List<string> pathList = new List<string>();
                 foreach (string path in resultText)
                 {
@@ -133,6 +136,10 @@ namespace PixON
                     item.Name = pathList[i];
                     resultBox.Items.Add(item);
                 }
+            }
+            else
+            {
+                resultBox.Hide();
             }
             picDb.Close();
         }
@@ -153,11 +160,13 @@ namespace PixON
                     Clipboard.SetImage(Image.FromFile(resultBox.Items[0].SubItems[0].Name));
                     Hide();
                     SendKeys.SendWait("^v");
+                    e.Handled = e.SuppressKeyPress = true;
                 }
             }
             else if (e.KeyCode == Keys.Escape)
             {
                 Hide();
+                e.Handled = e.SuppressKeyPress = true;
             }
         }
     }

@@ -47,12 +47,12 @@
             this.menuQuickBarShowMain});
             this.menuQuickBar.Name = "menuQuickBar";
             this.menuQuickBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuQuickBar.Size = new System.Drawing.Size(153, 48);
+            this.menuQuickBar.Size = new System.Drawing.Size(137, 26);
             // 
             // menuQuickBarShowMain
             // 
             this.menuQuickBarShowMain.Name = "menuQuickBarShowMain";
-            this.menuQuickBarShowMain.Size = new System.Drawing.Size(152, 22);
+            this.menuQuickBarShowMain.Size = new System.Drawing.Size(136, 22);
             this.menuQuickBarShowMain.Text = "显示主界面";
             this.menuQuickBarShowMain.Click += new System.EventHandler(this.menuQuickBarShowMain_Click);
             // 
@@ -61,10 +61,10 @@
             this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.searchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.searchBox.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.searchBox.Location = new System.Drawing.Point(53, 220);
+            this.searchBox.Font = new System.Drawing.Font("微软雅黑 Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.searchBox.Location = new System.Drawing.Point(40, 220);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(347, 31);
+            this.searchBox.Size = new System.Drawing.Size(340, 35);
             this.searchBox.TabIndex = 1;
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             this.searchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchBox_KeyDown);
@@ -73,9 +73,9 @@
             // 
             this.iconBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconBox.Image = ((System.Drawing.Image)(resources.GetObject("iconBox.Image")));
-            this.iconBox.Location = new System.Drawing.Point(0, 210);
+            this.iconBox.Location = new System.Drawing.Point(2, 220);
             this.iconBox.Name = "iconBox";
-            this.iconBox.Size = new System.Drawing.Size(50, 50);
+            this.iconBox.Size = new System.Drawing.Size(35, 35);
             this.iconBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.iconBox.TabIndex = 2;
             this.iconBox.TabStop = false;
@@ -89,12 +89,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.resultBox.LargeImageList = this.resultImageList;
-            this.resultBox.Location = new System.Drawing.Point(53, 257);
+            this.resultBox.Location = new System.Drawing.Point(40, 260);
             this.resultBox.Name = "resultBox";
-            this.resultBox.Size = new System.Drawing.Size(347, 344);
+            this.resultBox.Size = new System.Drawing.Size(340, 328);
             this.resultBox.SmallImageList = this.resultImageList;
             this.resultBox.TabIndex = 3;
             this.resultBox.UseCompatibleStateImageBehavior = false;
+            this.resultBox.Visible = false;
             this.resultBox.DoubleClick += new System.EventHandler(this.resultBox_DoubleClick);
             // 
             // resultImageList
@@ -113,10 +114,11 @@
             this.recentBox.ItemHeight = 21;
             this.recentBox.Items.AddRange(new object[] {
             "（此处会显示您最近搜索过的字词）"});
-            this.recentBox.Location = new System.Drawing.Point(53, 0);
+            this.recentBox.Location = new System.Drawing.Point(40, 0);
             this.recentBox.Name = "recentBox";
-            this.recentBox.Size = new System.Drawing.Size(347, 214);
+            this.recentBox.Size = new System.Drawing.Size(340, 214);
             this.recentBox.TabIndex = 4;
+            this.recentBox.Visible = false;
             this.recentBox.SelectedIndexChanged += new System.EventHandler(this.recentBox_SelectedIndexChanged);
             // 
             // QuickBar

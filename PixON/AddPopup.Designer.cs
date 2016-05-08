@@ -32,12 +32,14 @@
             this.dgvKeyValue = new System.Windows.Forms.DataGridView();
             this.Key = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pbPreview = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKeyValue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPreview)).BeginInit();
             this.SuspendLayout();
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(195, 222);
+            this.btnConfirm.Location = new System.Drawing.Point(419, 225);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(75, 23);
             this.btnConfirm.TabIndex = 5;
@@ -51,10 +53,10 @@
             this.dgvKeyValue.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Key,
             this.Value});
-            this.dgvKeyValue.Location = new System.Drawing.Point(12, 12);
+            this.dgvKeyValue.Location = new System.Drawing.Point(251, 12);
             this.dgvKeyValue.Name = "dgvKeyValue";
             this.dgvKeyValue.RowTemplate.Height = 23;
-            this.dgvKeyValue.Size = new System.Drawing.Size(258, 204);
+            this.dgvKeyValue.Size = new System.Drawing.Size(243, 204);
             this.dgvKeyValue.TabIndex = 7;
             // 
             // Key
@@ -67,16 +69,28 @@
             this.Value.HeaderText = "标签内容";
             this.Value.Name = "Value";
             // 
+            // pbPreview
+            // 
+            this.pbPreview.Location = new System.Drawing.Point(12, 12);
+            this.pbPreview.Name = "pbPreview";
+            this.pbPreview.Size = new System.Drawing.Size(218, 204);
+            this.pbPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPreview.TabIndex = 8;
+            this.pbPreview.TabStop = false;
+            // 
             // AddPopup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(291, 257);
+            this.ClientSize = new System.Drawing.Size(506, 257);
+            this.Controls.Add(this.pbPreview);
             this.Controls.Add(this.dgvKeyValue);
             this.Controls.Add(this.btnConfirm);
             this.Name = "AddPopup";
             this.Text = "AddPopup";
+            this.Shown += new System.EventHandler(this.AddPopup_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKeyValue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPreview)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -87,5 +101,6 @@
         private System.Windows.Forms.DataGridView dgvKeyValue;
         private System.Windows.Forms.DataGridViewTextBoxColumn Key;
         private System.Windows.Forms.DataGridViewTextBoxColumn Value;
+        private System.Windows.Forms.PictureBox pbPreview;
     }
 }
