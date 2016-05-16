@@ -39,22 +39,22 @@ namespace PixON
 
             if (File.Exists("temp/tmp.png")) File.Delete("temp/tmp.png");
             clipImg.Save("temp/tmp.png", System.Drawing.Imaging.ImageFormat.Png);
-
             string imgMD5 = Format.GetMD5("temp/tmp.png");
+            File.Delete("temp/tmp.png");
+
             string fileName = "data/" + imgMD5 + ".png";
-            if (File.Exists(fileName)) File.Delete(fileName);
-            clipImg.Save(fileName, System.Drawing.Imaging.ImageFormat.Png);
+            if (!File.Exists(fileName)) clipImg.Save(fileName, System.Drawing.Imaging.ImageFormat.Png);
 
             PixONDb picDb = new PixONDb();
             picDb.AddFile(fileName, imgMD5);
-            
+            picDb.Close();
+
             var addPopup = new AddPopup();
             addPopup.imgMD5 = imgMD5;
             addPopup.fileName = fileName;
 
             addPopup.Show();
             addPopup.Activate();
-            picDb.Close();
         }
     }
 }

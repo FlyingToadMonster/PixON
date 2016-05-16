@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.SQLite;
 using System.IO;
-using System.Windows.Forms;
 
 namespace PixON
 {
@@ -54,21 +54,18 @@ value varchar(8000)
 
         public void AddProp(string hash, string key, string value)
         {
-            SQLiteCommand cmd = new SQLiteCommand("SELECT COUNT(*) FROM InfoDb WHERE hash=@Hash AND key=@Key AND value=@VALUE", pixDbConn);
+            SQLiteCommand cmd = new SQLiteCommand("INSERT OR REPLACE INTO InfoDB (hash, key, value) VALUES (@Hash, @Key, @Value)", pixDbConn);
             cmd.Parameters.AddWithValue("Hash", hash);
             cmd.Parameters.AddWithValue("Key", key);
             cmd.Parameters.AddWithValue("Value", value);
-            SQLiteDataReader rdr = cmd.ExecuteReader();
+            cmd.ExecuteNonQuery();
+        }
 
-            rdr.Read();
-            if (rdr.GetInt32(0) == 0)
-            {
-                cmd = new SQLiteCommand("INSERT INTO InfoDB (hash, key, value) VALUES (@Hash, @Key, @Value)", pixDbConn);
-                cmd.Parameters.AddWithValue("Hash", hash);
-                cmd.Parameters.AddWithValue("Key", key);
-                cmd.Parameters.AddWithValue("Value", value);
-                cmd.ExecuteNonQuery();
-            }
+        public void DelProp(string hash)
+        {
+            SQLiteCommand cmd = new SQLiteCommand("DELETE FROM InfoDB WHERE hash=@Hash", pixDbConn);
+            cmd.Parameters.AddWithValue("Hash", hash);
+            cmd.ExecuteNonQuery();
         }
 
         public List<List<string>> GetProp(string hash)

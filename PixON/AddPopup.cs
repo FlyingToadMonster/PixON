@@ -31,6 +31,7 @@ namespace PixON
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             PixONDb picDb = new PixONDb();
+            picDb.DelProp(imgMD5);
             foreach (DataGridViewRow row in dgvKeyValue.Rows)
             {
                 if (row.Cells[0].Value != null && row.Cells[1].Value != null)
@@ -43,8 +44,8 @@ namespace PixON
                     }
                 }
             }
-            Close();
             picDb.Close();
+            Close();
         }
     }
 }

@@ -38,7 +38,7 @@
             this.menuTrayShowMain = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.btnWebUpload = new System.Windows.Forms.Button();
-            this.btnWebDownload = new System.Windows.Forms.Button();
+            this.btnWebSync = new System.Windows.Forms.Button();
             this.menuTray.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,24 +98,24 @@
             this.btnWebUpload.Name = "btnWebUpload";
             this.btnWebUpload.Size = new System.Drawing.Size(144, 164);
             this.btnWebUpload.TabIndex = 7;
-            this.btnWebUpload.Text = "button1";
+            this.btnWebUpload.Text = "上传至云";
             this.btnWebUpload.UseVisualStyleBackColor = true;
             // 
-            // btnWebDownload
+            // btnWebSync
             // 
-            this.btnWebDownload.Location = new System.Drawing.Point(169, 59);
-            this.btnWebDownload.Name = "btnWebDownload";
-            this.btnWebDownload.Size = new System.Drawing.Size(144, 164);
-            this.btnWebDownload.TabIndex = 8;
-            this.btnWebDownload.Text = "button2";
-            this.btnWebDownload.UseVisualStyleBackColor = true;
+            this.btnWebSync.Location = new System.Drawing.Point(169, 59);
+            this.btnWebSync.Name = "btnWebSync";
+            this.btnWebSync.Size = new System.Drawing.Size(144, 164);
+            this.btnWebSync.TabIndex = 8;
+            this.btnWebSync.Text = "从云同步";
+            this.btnWebSync.UseVisualStyleBackColor = true;
             // 
             // PixON
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(325, 235);
-            this.Controls.Add(this.btnWebDownload);
+            this.Controls.Add(this.btnWebSync);
             this.Controls.Add(this.btnWebUpload);
             this.Controls.Add(this.btnClipImp);
             this.Controls.Add(this.btnQBar);
@@ -137,7 +137,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuTrayShowMain;
         private System.Windows.Forms.ToolStripMenuItem menuTrayExit;
         private System.Windows.Forms.Button btnWebUpload;
-        private System.Windows.Forms.Button btnWebDownload;
+        private System.Windows.Forms.Button btnWebSync;
     }
 }
 

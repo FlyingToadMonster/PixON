@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPopup));
             this.btnConfirm = new System.Windows.Forms.Button();
             this.dgvKeyValue = new System.Windows.Forms.DataGridView();
             this.Key = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,8 +87,9 @@
             this.Controls.Add(this.pbPreview);
             this.Controls.Add(this.dgvKeyValue);
             this.Controls.Add(this.btnConfirm);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddPopup";
-            this.Text = "AddPopup";
+            this.Text = "添加图片";
             this.Shown += new System.EventHandler(this.AddPopup_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKeyValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPreview)).EndInit();
