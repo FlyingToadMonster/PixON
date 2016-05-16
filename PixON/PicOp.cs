@@ -49,12 +49,19 @@ namespace PixON
             picDb.AddFile(fileName, imgMD5);
             picDb.Close();
 
-            var addPopup = new AddPopup();
+            var addPopup = new PropPopup();
             addPopup.imgMD5 = imgMD5;
             addPopup.fileName = fileName;
+            addPopup.Text = "添加图片";
 
             addPopup.Show();
             addPopup.Activate();
+        }
+
+        public static void EditProp(string fileName)
+        {
+            Clipboard.SetImage(Image.FromFile(fileName));
+            ImportClipboard();
         }
     }
 }

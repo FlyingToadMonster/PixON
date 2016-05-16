@@ -169,5 +169,10 @@ namespace PixON
                 e.Handled = e.SuppressKeyPress = true;
             }
         }
+
+        private void menuImageListEdit_Click(object sender, EventArgs e)
+        {
+            PicOp.EditProp(resultBox.SelectedItems[0].SubItems[0].Name);
+        }
     }
 }

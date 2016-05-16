@@ -92,6 +92,7 @@
             this.resultBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.resultBox.ContextMenuStrip = this.menuImageList;
             this.resultBox.LargeImageList = this.resultImageList;
             this.resultBox.Location = new System.Drawing.Point(40, 260);
             this.resultBox.Name = "resultBox";
@@ -132,13 +133,14 @@
             this.menuImageListDel});
             this.menuImageList.Name = "menuImageList";
             this.menuImageList.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuImageList.Size = new System.Drawing.Size(153, 70);
+            this.menuImageList.Size = new System.Drawing.Size(125, 48);
             // 
             // menuImageListEdit
             // 
             this.menuImageListEdit.Name = "menuImageListEdit";
-            this.menuImageListEdit.Size = new System.Drawing.Size(152, 22);
+            this.menuImageListEdit.Size = new System.Drawing.Size(124, 22);
             this.menuImageListEdit.Text = "修改此项";
+            this.menuImageListEdit.Click += new System.EventHandler(this.menuImageListEdit_Click);
             // 
             // menuImageListDel
             // 
