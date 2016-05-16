@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data.SQLite;
 using System.IO;
+using System.Windows.Forms;
 
 namespace PixON
 {
@@ -70,16 +71,18 @@ value varchar(8000)
             }
         }
 
-        public List<string> GetProp(string hash, string key)
+        public List<List<string>> GetProp(string hash)
         {
-            List<string> result = new List<string>();
-            SQLiteCommand cmd = new SQLiteCommand("SELECT value FROM InfoDb WHERE hash=@Hash AND key=@Key", pixDbConn);
+            List<List<string>> result = new List<List<string>>();
+            SQLiteCommand cmd = new SQLiteCommand("SELECT key,value FROM InfoDb WHERE hash=@Hash", pixDbConn);
             cmd.Parameters.AddWithValue("Hash", hash);
-            cmd.Parameters.AddWithValue("Key", key);
             SQLiteDataReader rdr = cmd.ExecuteReader();
             while (rdr.Read())
             {
-                result.Add(rdr.GetString(0));
+                List<string> item = new List<string>();
+                item.Add(rdr.GetString(0));
+                item.Add(rdr.GetString(1));
+                result.Add(item);
             }
             return result;
         }

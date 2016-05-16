@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PixON));
-            this.lbPathList = new System.Windows.Forms.ListBox();
-            this.tbPathInput = new System.Windows.Forms.TextBox();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnSelectPath = new System.Windows.Forms.Button();
             this.fbdSelectPath = new System.Windows.Forms.FolderBrowserDialog();
             this.btnQBar = new System.Windows.Forms.Button();
             this.btnClipImp = new System.Windows.Forms.Button();
@@ -42,60 +37,16 @@
             this.menuTray = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuTrayShowMain = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTrayExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnWebUpload = new System.Windows.Forms.Button();
+            this.btnWebDownload = new System.Windows.Forms.Button();
             this.menuTray.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lbPathList
-            // 
-            this.lbPathList.FormattingEnabled = true;
-            this.lbPathList.ItemHeight = 12;
-            this.lbPathList.Location = new System.Drawing.Point(23, 68);
-            this.lbPathList.Name = "lbPathList";
-            this.lbPathList.Size = new System.Drawing.Size(179, 136);
-            this.lbPathList.TabIndex = 0;
-            // 
-            // tbPathInput
-            // 
-            this.tbPathInput.Location = new System.Drawing.Point(23, 41);
-            this.tbPathInput.Name = "tbPathInput";
-            this.tbPathInput.Size = new System.Drawing.Size(135, 21);
-            this.tbPathInput.TabIndex = 1;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(217, 39);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(85, 23);
-            this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "添加路径";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnDel
-            // 
-            this.btnDel.Location = new System.Drawing.Point(217, 68);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(85, 23);
-            this.btnDel.TabIndex = 3;
-            this.btnDel.Text = "删除选定项";
-            this.btnDel.UseVisualStyleBackColor = true;
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
-            // 
-            // btnSelectPath
-            // 
-            this.btnSelectPath.Location = new System.Drawing.Point(164, 41);
-            this.btnSelectPath.Name = "btnSelectPath";
-            this.btnSelectPath.Size = new System.Drawing.Size(38, 23);
-            this.btnSelectPath.TabIndex = 4;
-            this.btnSelectPath.Text = "...";
-            this.btnSelectPath.UseVisualStyleBackColor = true;
-            this.btnSelectPath.Click += new System.EventHandler(this.btnSelectPath_Click);
-            // 
             // btnQBar
             // 
-            this.btnQBar.Location = new System.Drawing.Point(217, 182);
+            this.btnQBar.Location = new System.Drawing.Point(169, 12);
             this.btnQBar.Name = "btnQBar";
-            this.btnQBar.Size = new System.Drawing.Size(85, 23);
+            this.btnQBar.Size = new System.Drawing.Size(144, 41);
             this.btnQBar.TabIndex = 5;
             this.btnQBar.Text = "悬浮窗";
             this.btnQBar.UseVisualStyleBackColor = true;
@@ -103,9 +54,9 @@
             // 
             // btnClipImp
             // 
-            this.btnClipImp.Location = new System.Drawing.Point(217, 135);
+            this.btnClipImp.Location = new System.Drawing.Point(12, 12);
             this.btnClipImp.Name = "btnClipImp";
-            this.btnClipImp.Size = new System.Drawing.Size(85, 41);
+            this.btnClipImp.Size = new System.Drawing.Size(144, 41);
             this.btnClipImp.TabIndex = 6;
             this.btnClipImp.Text = "从剪贴板添加图片";
             this.btnClipImp.UseVisualStyleBackColor = true;
@@ -125,51 +76,59 @@
             this.menuTrayExit});
             this.menuTray.Name = "menuTray";
             this.menuTray.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuTray.Size = new System.Drawing.Size(153, 70);
+            this.menuTray.Size = new System.Drawing.Size(137, 48);
             // 
             // menuTrayShowMain
             // 
             this.menuTrayShowMain.Name = "menuTrayShowMain";
-            this.menuTrayShowMain.Size = new System.Drawing.Size(152, 22);
+            this.menuTrayShowMain.Size = new System.Drawing.Size(136, 22);
             this.menuTrayShowMain.Text = "显示主界面";
             this.menuTrayShowMain.Click += new System.EventHandler(this.menuTrayShowMain_Click);
             // 
             // menuTrayExit
             // 
             this.menuTrayExit.Name = "menuTrayExit";
-            this.menuTrayExit.Size = new System.Drawing.Size(152, 22);
+            this.menuTrayExit.Size = new System.Drawing.Size(136, 22);
             this.menuTrayExit.Text = "退出程序";
             this.menuTrayExit.Click += new System.EventHandler(this.menuTrayExit_Click);
+            // 
+            // btnWebUpload
+            // 
+            this.btnWebUpload.Location = new System.Drawing.Point(12, 59);
+            this.btnWebUpload.Name = "btnWebUpload";
+            this.btnWebUpload.Size = new System.Drawing.Size(144, 164);
+            this.btnWebUpload.TabIndex = 7;
+            this.btnWebUpload.Text = "button1";
+            this.btnWebUpload.UseVisualStyleBackColor = true;
+            // 
+            // btnWebDownload
+            // 
+            this.btnWebDownload.Location = new System.Drawing.Point(169, 59);
+            this.btnWebDownload.Name = "btnWebDownload";
+            this.btnWebDownload.Size = new System.Drawing.Size(144, 164);
+            this.btnWebDownload.TabIndex = 8;
+            this.btnWebDownload.Text = "button2";
+            this.btnWebDownload.UseVisualStyleBackColor = true;
             // 
             // PixON
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(325, 235);
+            this.Controls.Add(this.btnWebDownload);
+            this.Controls.Add(this.btnWebUpload);
             this.Controls.Add(this.btnClipImp);
             this.Controls.Add(this.btnQBar);
-            this.Controls.Add(this.btnSelectPath);
-            this.Controls.Add(this.btnDel);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.tbPathInput);
-            this.Controls.Add(this.lbPathList);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PixON";
             this.Text = "PixON";
             this.Resize += new System.EventHandler(this.PixON_Resize);
             this.menuTray.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lbPathList;
-        private System.Windows.Forms.TextBox tbPathInput;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.Button btnSelectPath;
         private System.Windows.Forms.FolderBrowserDialog fbdSelectPath;
         private System.Windows.Forms.Button btnQBar;
         private System.Windows.Forms.Button btnClipImp;
@@ -177,6 +136,8 @@
         private System.Windows.Forms.ContextMenuStrip menuTray;
         private System.Windows.Forms.ToolStripMenuItem menuTrayShowMain;
         private System.Windows.Forms.ToolStripMenuItem menuTrayExit;
+        private System.Windows.Forms.Button btnWebUpload;
+        private System.Windows.Forms.Button btnWebDownload;
     }
 }
 

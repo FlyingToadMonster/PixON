@@ -37,8 +37,12 @@
             this.resultBox = new System.Windows.Forms.ListView();
             this.resultImageList = new System.Windows.Forms.ImageList(this.components);
             this.recentBox = new System.Windows.Forms.ListBox();
+            this.menuImageList = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuImageListEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuImageListDel = new System.Windows.Forms.ToolStripMenuItem();
             this.menuQuickBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconBox)).BeginInit();
+            this.menuImageList.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuQuickBar
@@ -64,7 +68,7 @@
             this.searchBox.Font = new System.Drawing.Font("微软雅黑 Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.searchBox.Location = new System.Drawing.Point(40, 220);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(340, 35);
+            this.searchBox.Size = new System.Drawing.Size(357, 35);
             this.searchBox.TabIndex = 1;
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             this.searchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchBox_KeyDown);
@@ -91,7 +95,7 @@
             this.resultBox.LargeImageList = this.resultImageList;
             this.resultBox.Location = new System.Drawing.Point(40, 260);
             this.resultBox.Name = "resultBox";
-            this.resultBox.Size = new System.Drawing.Size(340, 328);
+            this.resultBox.Size = new System.Drawing.Size(357, 328);
             this.resultBox.SmallImageList = this.resultImageList;
             this.resultBox.TabIndex = 3;
             this.resultBox.UseCompatibleStateImageBehavior = false;
@@ -116,10 +120,31 @@
             "（此处会显示您最近搜索过的字词）"});
             this.recentBox.Location = new System.Drawing.Point(40, 0);
             this.recentBox.Name = "recentBox";
-            this.recentBox.Size = new System.Drawing.Size(340, 214);
+            this.recentBox.Size = new System.Drawing.Size(357, 214);
             this.recentBox.TabIndex = 4;
             this.recentBox.Visible = false;
             this.recentBox.SelectedIndexChanged += new System.EventHandler(this.recentBox_SelectedIndexChanged);
+            // 
+            // menuImageList
+            // 
+            this.menuImageList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuImageListEdit,
+            this.menuImageListDel});
+            this.menuImageList.Name = "menuImageList";
+            this.menuImageList.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuImageList.Size = new System.Drawing.Size(153, 70);
+            // 
+            // menuImageListEdit
+            // 
+            this.menuImageListEdit.Name = "menuImageListEdit";
+            this.menuImageListEdit.Size = new System.Drawing.Size(152, 22);
+            this.menuImageListEdit.Text = "修改此项";
+            // 
+            // menuImageListDel
+            // 
+            this.menuImageListDel.Name = "menuImageListDel";
+            this.menuImageListDel.Size = new System.Drawing.Size(152, 22);
+            this.menuImageListDel.Text = "删除此项";
             // 
             // QuickBar
             // 
@@ -144,6 +169,7 @@
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.QuickBar_DragDrop);
             this.menuQuickBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconBox)).EndInit();
+            this.menuImageList.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,5 +184,8 @@
         private System.Windows.Forms.ListView resultBox;
         private System.Windows.Forms.ImageList resultImageList;
         private System.Windows.Forms.ListBox recentBox;
+        private System.Windows.Forms.ContextMenuStrip menuImageList;
+        private System.Windows.Forms.ToolStripMenuItem menuImageListEdit;
+        private System.Windows.Forms.ToolStripMenuItem menuImageListDel;
     }
 }
