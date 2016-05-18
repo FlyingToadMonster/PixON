@@ -35,11 +35,11 @@
             this.searchBox = new System.Windows.Forms.TextBox();
             this.iconBox = new System.Windows.Forms.PictureBox();
             this.resultBox = new System.Windows.Forms.ListView();
-            this.resultImageList = new System.Windows.Forms.ImageList(this.components);
-            this.recentBox = new System.Windows.Forms.ListBox();
             this.menuImageList = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuImageListEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuImageListDel = new System.Windows.Forms.ToolStripMenuItem();
+            this.resultImageList = new System.Windows.Forms.ImageList(this.components);
+            this.recentBox = new System.Windows.Forms.ListBox();
             this.menuQuickBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconBox)).BeginInit();
             this.menuImageList.SuspendLayout();
@@ -103,6 +103,28 @@
             this.resultBox.Visible = false;
             this.resultBox.DoubleClick += new System.EventHandler(this.resultBox_DoubleClick);
             // 
+            // menuImageList
+            // 
+            this.menuImageList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuImageListEdit,
+            this.menuImageListDel});
+            this.menuImageList.Name = "menuImageList";
+            this.menuImageList.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuImageList.Size = new System.Drawing.Size(125, 48);
+            // 
+            // menuImageListEdit
+            // 
+            this.menuImageListEdit.Name = "menuImageListEdit";
+            this.menuImageListEdit.Size = new System.Drawing.Size(124, 22);
+            this.menuImageListEdit.Text = "修改此项";
+            this.menuImageListEdit.Click += new System.EventHandler(this.menuImageListEdit_Click);
+            // 
+            // menuImageListDel
+            // 
+            this.menuImageListDel.Name = "menuImageListDel";
+            this.menuImageListDel.Size = new System.Drawing.Size(124, 22);
+            this.menuImageListDel.Text = "删除此项";
+            // 
             // resultImageList
             // 
             this.resultImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
@@ -125,28 +147,6 @@
             this.recentBox.TabIndex = 4;
             this.recentBox.Visible = false;
             this.recentBox.SelectedIndexChanged += new System.EventHandler(this.recentBox_SelectedIndexChanged);
-            // 
-            // menuImageList
-            // 
-            this.menuImageList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuImageListEdit,
-            this.menuImageListDel});
-            this.menuImageList.Name = "menuImageList";
-            this.menuImageList.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuImageList.Size = new System.Drawing.Size(125, 48);
-            // 
-            // menuImageListEdit
-            // 
-            this.menuImageListEdit.Name = "menuImageListEdit";
-            this.menuImageListEdit.Size = new System.Drawing.Size(124, 22);
-            this.menuImageListEdit.Text = "修改此项";
-            this.menuImageListEdit.Click += new System.EventHandler(this.menuImageListEdit_Click);
-            // 
-            // menuImageListDel
-            // 
-            this.menuImageListDel.Name = "menuImageListDel";
-            this.menuImageListDel.Size = new System.Drawing.Size(152, 22);
-            this.menuImageListDel.Text = "删除此项";
             // 
             // QuickBar
             // 
